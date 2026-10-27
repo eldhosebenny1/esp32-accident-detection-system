@@ -110,9 +110,9 @@ void setup() {
   delay(800);
 
   Serial.println();
-  Serial.println("=================================");
+ 
   Serial.println(" SMART ACCIDENT SYSTEM - WEB UI");
-  Serial.println("=================================");
+
 
   Wire.begin(21, 22);
 
@@ -248,7 +248,7 @@ void readGPS() {
   lastGPSPrint = millis();
 
   Serial.println();
-  Serial.println("========== GPS STATUS ==========");
+  Serial.println(" GPS STATUS ");
   Serial.print("Satellites: ");
   Serial.println(gps.satellites.value());
   Serial.print("GPS fix: ");
@@ -266,7 +266,7 @@ void readGPS() {
   }
   Serial.print("Characters processed: ");
   Serial.println(gps.charsProcessed());
-  Serial.println("================================");
+
 }
 
 void checkImpact() {
@@ -337,10 +337,10 @@ void checkConfirmation() {
   digitalWrite(BUZZER, HIGH);
 
   Serial.println();
-  Serial.println("================================");
+  
   Serial.println("ACCIDENT CONFIRMED - updating Web UI");
   Serial.println("No I'M SAFE response received.");
-  Serial.println("================================");
+  
 
   prepareIncidentReport();
 }
@@ -511,7 +511,7 @@ void prepareIncidentReport() {
     : "Emergency recorded in Web UI with current GPS location.";
 
   Serial.println();
-  Serial.println("========== WEB UI INCIDENT REPORT ==========");
+  Serial.println(" WEB UI INCIDENT REPORT ");
   Serial.println(incidentStatus);
   Serial.print("Location source: ");
   Serial.println(incidentUsesDemoLocation ? "DEMO LOCATION (GPS FIX UNAVAILABLE)" : "REAL GPS");
@@ -523,7 +523,7 @@ void prepareIncidentReport() {
   Serial.print("Map: ");
   Serial.println(incidentMapLink);
   Serial.println("Open the ESP32 dashboard to see this incident.");
-  Serial.println("============================================");
+ 
 }
 
 void createDemoHospitals(float lat, float lon) {
