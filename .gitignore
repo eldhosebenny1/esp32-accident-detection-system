@@ -1,0 +1,21 @@
+secrets.h
+
+# Build output
+build/
+*.bin
+*.elf
+*.hex
+*.map
+*.o
+*.d
+*.dSYM
+
+# Editors
+.vscode/
+.idea/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
